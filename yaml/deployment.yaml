@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-api
+  template:
+    metadata:
+      labels:
+        app: account-api
+    spec:
+      containers:
+        - name: account-api
+          image: blueharvest/account-api:latest
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,14 @@
+apiVersion: integreatly/v1alpha1
+kind: Grafana
+metadata:
+  name: account-api-grafana
+spec:
+  config:
+    auth:
+      disable_login_form: true
+    security:
+      admin_password: password
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus:9090
